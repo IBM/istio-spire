@@ -58,7 +58,7 @@ Refresh the page on the browser. You will see the *Send to Echo Server* button. 
 
 If you press the button again, you will see the message that was returned from the echo server.
 
-##Notes
+## Notes
 
 If you have any questions or issues you can create a new [issue here][issues].
 

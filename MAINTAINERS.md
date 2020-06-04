@@ -1,3 +1,6 @@
 # MAINTAINERS
 
-Christopher Ferris - chrisfer@us.ibm.com
+Doron Chen - cdoron@il.ibm.com
+Roee Shlomo - Roee.Shlomo@ibm.com
+Tomer Solomon - Tomer.Solomon@ibm.com
+Ronen Kat - ronenkat@il.ibm.com
