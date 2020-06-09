@@ -1,0 +1,14 @@
+version: '3'
+services:
+  echo:
+    build: ./docker/echo
+    hostname: echo
+    tty: true
+    privileged: true
+  web:
+    build: ./docker/web
+    hostname: web
+    tty: true
+    privileged: true
+    links:
+      - echo

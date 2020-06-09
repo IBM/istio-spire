@@ -1,0 +1,113 @@
+##################################################################################################
+# Web service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  labels:
+    app: web
+    service: web
+spec:
+  ports:
+  - port: 9000
+    name: http
+  selector:
+    app: web
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: serviceaccount-web
+  labels:
+    account: web
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-v1
+  labels:
+    app: web
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: web
+        version: v1
+    spec:
+      serviceAccountName: serviceaccount-web
+      containers:
+      - name: web
+        image: webecho_web:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 9000
+---
+##################################################################################################
+# Echo service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo
+  labels:
+    app: echo
+    service: echo
+spec:
+  ports:
+  - name: http
+    port: 8081
+    targetPort: 8081
+  - name: listener8001
+    port: 8001
+    targetPort: 8001
+  - name: listener8002
+    port: 8002
+    targetPort: 8002
+  selector:
+    app: echo
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: serviceaccount-echo
+  labels:
+    account: echo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-v1
+  labels:
+    app: echo
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: echo
+        version: v1
+    spec:
+      serviceAccountName: serviceaccount-echo
+      containers:
+      - name: echo
+        image: webecho_echo:latest
+        imagePullPolicy: Never
+        ports:
+        - name: port8081
+          containerPort: 8081
+        - name: port8001
+          containerPort: 8001
+        - name: port8002
+          containerPort: 8002

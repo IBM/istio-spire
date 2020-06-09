@@ -1,0 +1,3 @@
+- mountPath: /spire-agent-socket-dir
+  name: spire-agent-socket-dir
+  readOnly: false

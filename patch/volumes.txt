@@ -1,0 +1,3 @@
+- name: spire-agent-socket-dir
+  hostPath:
+    path: /run/spire/sockets
