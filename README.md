@@ -1,9 +1,9 @@
-# Istio Identity with SPIFFE/SPIRE
-This repository was tested on Ubuntu 18.04.4 LTS, on a VirtualBox VM.
-You will need at least two CPUs to successfully run Istio.
+# Istio Identities with SPIFFE/SPIRE
 
-The scripts in this repository demonstrate how to replace the identity-issuing mechanism of Istio with that
-of Spire. It was tested on **Istio 1.5.4**.
+The scripts in this repository demonstrate how to replace the identity-issuing mechanism of Istio with that of Spire.
+
+This repository was tested on Ubuntu 18.04.4 LTS, on a VirtualBox VM.
+You will need at least two CPUs to successfully run Istio. We use **Istio 1.5.4**.
 
 We hope that this work would inspire a complete solution to installing Istio with Spire, and we welcome contributions to this effort.
 
