@@ -44,7 +44,7 @@ spec:
       serviceAccountName: serviceaccount-web
       containers:
       - name: web
-        image: web-echo_web:latest
+        image: webecho_web:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 9000
@@ -102,7 +102,7 @@ spec:
       serviceAccountName: serviceaccount-echo
       containers:
       - name: echo
-        image: web-echo_echo:latest
+        image: webecho_echo:latest
         imagePullPolicy: Never
         ports:
         - name: port8081

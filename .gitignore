@@ -2,6 +2,6 @@ bin/
 istio-1.5.4/
 spire/spire-tutorials/
 istio_patch/
-deployment/web-echo/docker/echo/echo-server
-deployment/web-echo/docker/web/web-server
+deployment/webecho/docker/echo/echo-server
+deployment/webecho/docker/web/web-server
 go/
