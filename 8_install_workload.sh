@@ -9,7 +9,7 @@ if [ ! -d go ]
   rm go1.14.3.linux-amd64.tar.gz
 fi
 
-cd deployment/web-echo
+cd deployment/webecho
 ./build.sh
 
 cd ../k8s_yamls
